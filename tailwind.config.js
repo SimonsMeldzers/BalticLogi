@@ -6,7 +6,13 @@ module.exports = {
     "./components/**/*.php" 
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#89A8B2',
+        secondary: '#B3C8CF',
+        tertiary: '#E5E1DA',
+      },
+    },
   },
   plugins: [],
 }
