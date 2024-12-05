@@ -5,7 +5,6 @@ $sql = 'SELECT * FROM products';
 $result = $conn->query($sql);
 $products = $result->fetch_array();
 // print_r($products[1]);
-$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -19,5 +18,11 @@ $conn->close();
 </head>
 <body>
     <?php include '../public/components/navbar.php'; ?>
+    <?php include '../public/components/banner.php'; ?>
+    <?php include '../public/components/featuredProducts.php'; ?>
+
+    <?php
+        $conn->close();
+    ?>
 </body>
 </html>
