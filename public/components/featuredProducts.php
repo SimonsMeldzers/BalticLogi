@@ -16,7 +16,7 @@ if (!$featuredProducts) {
     if ($featuredProducts->num_rows > 0):
         while ($row = $featuredProducts->fetch_assoc()):
     ?>
-    <a href="/product-details.php?id=<?php echo $row['id']; ?>" 
+    <a href="/BalticLogi/public/productSlug.php?id=<?php echo $row['id']; ?>" 
        class="w-72 lg:w-96 bg-white rounded-md shadow-lg overflow-hidden 
               text-start hover:shadow-xl transition-shadow duration-300"
     >
