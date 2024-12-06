@@ -13,6 +13,11 @@ module.exports = {
         tertiary: '#E5E1DA',
         danger: '#E07B39',
       },
+      boxShadow: {
+        '3xl': '0px 2px 8px rgba(0, 0, 0, 0.15)',
+      },
+      screens: {
+      },
     },
   },
   plugins: [],
