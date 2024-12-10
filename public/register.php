@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             Reģistrēties
                         </button>
                         <?php if (!empty($success)): ?>
-                            <div class="bg-green-100 text-green-700 p-4 mb-4 rounded">
+                            <div class="bg-green-100 text-green-700 p-4 mb-4 mt-2 rounded">
                                 <p><?php echo htmlspecialchars($success); ?></p>
                             </div>
                             <?php $success = ''; ?>

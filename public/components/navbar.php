@@ -33,10 +33,49 @@
                     <a href="#"
                         class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
                 </li>
-                <li>
-                    <a href="/BalticLogi/public/login.php"
-                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Lietotājs</a>
+                <!-- Pārbauda vai lietotājs ir pierakstījies vai nē -->
+                <li class="relative group">
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <button onclick="showLogoutTooltip()"
+                                class="block py-2 px-3 text-gray-900 rounded 
+                                    hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 
+                                    dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 
+                                    dark:hover:text-white md:dark:hover:bg-transparent"
+                        >
+                            Izrakstīties
+                        </button>
+                        <div id="logoutTooltip"
+                             class="absolute left-1/2 transform -translate-x-1/2 border mt-2 w-64 shadow-3xl bg-white text-sm rounded py-2 px-4 opacity-0 pointer-events-none transition-opacity duration-300">
+                            Vai tiešām vēlaties izrakstīties?
+                            <div class="flex justify-end mt-2">
+                                <button onclick="hideLogoutTooltip()" class="mr-2 text-gray-600 hover:text-gray-300">Atcelt</button>
+                                <a href="/BalticLogi/src/logout.php" class="text-danger hover:underline">Izrakstīties</a>
+                            </div>
+                        </div>
+                    <?php else: ?>
+                        <a href="/BalticLogi/public/login.php"
+                           class="block py-2 px-3 text-gray-900 rounded 
+                                hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 
+                                dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white 
+                                  md:dark:hover:bg-transparent"
+                            >
+                            Pierakstīties
+                        </a>
+                    <?php endif; ?>
                 </li>
+                <!-- Parādās ja lietotājs ir admins -->
+                <?php if (isset($_SESSION['user_role']) && $_SESSION['user_role'] === 'admin'): ?>
+                    <li>
+                    <a href="/BalticLogi/public/adminDashboard.php"
+                            class="block py-2 px-3 text-gray-900 rounded 
+                                 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-primary md:p-0 
+                                 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 
+                                 dark:hover:text-white md:dark:hover:bg-transparent"
+                            >
+                            Admin
+                        </a>
+                    </li>
+                <?php endif; ?>
             </ul>
         </div>
     </div>
@@ -46,5 +85,15 @@
     function toggleNavbar() {
         const navbar = document.getElementById('navbar-default');
         navbar.classList.toggle('hidden');
+    }
+
+    function showLogoutTooltip() {
+        const tooltip = document.getElementById('logoutTooltip');
+        tooltip.classList.remove('opacity-0', 'pointer-events-none');
+    }
+
+    function hideLogoutTooltip() {
+        const tooltip = document.getElementById('logoutTooltip');
+        tooltip.classList.add('opacity-0', 'pointer-events-none');
     }
 </script>

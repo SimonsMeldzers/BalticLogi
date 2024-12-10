@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../src/connect_db.php';
 
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
@@ -22,7 +23,9 @@ $product = $result->fetch_assoc();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo htmlspecialchars($product['name']); ?> - Product Details</title>
+    <title>
+        <?php echo htmlspecialchars($product['name']); ?> - €<?php echo htmlspecialchars($product['price']); ?> 
+    </title>
     <link href="../src/output.css" rel="stylesheet">
 </head>
 <body>

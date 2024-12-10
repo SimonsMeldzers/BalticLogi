@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../src/connect_db.php';
 
 $sql = 'SELECT * FROM products';

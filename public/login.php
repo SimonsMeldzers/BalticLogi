@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $_SESSION['user_id'] = $user['id'];
                     $_SESSION['user_name'] = $user['name'];
                     $_SESSION['user_role'] = $user['role'];
-                    header("Location: ");
+                    header("Location: index.php");
                     exit;
                 } else {
                     $errors[] = "Nepareiza parole.";
