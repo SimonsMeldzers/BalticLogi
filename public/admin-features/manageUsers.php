@@ -24,7 +24,7 @@ if (isset($_SESSION['success_message'])) {
     <?php include '../../public/components/navbar.php'; ?>
     <div class="max-w-screen-xl mx-auto my-4">
         <a href="javascript:window.history.back();"
-           class="text-danger hover:opacity-80"
+           class="text-danger hover:opacity-80 hover:underline"
         >
             Atpakaļ
         </a>

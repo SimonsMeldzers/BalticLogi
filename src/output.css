@@ -1522,6 +1522,18 @@ video {
   text-decoration-line: underline;
 }
 
+.hover\:underline-offset-2:hover {
+  text-underline-offset: 2px;
+}
+
+.hover\:underline-offset-1:hover {
+  text-underline-offset: 1px;
+}
+
+.hover\:underline-offset-4:hover {
+  text-underline-offset: 4px;
+}
+
 .hover\:opacity-90:hover {
   opacity: 0.9;
 }
