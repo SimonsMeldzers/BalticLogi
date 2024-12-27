@@ -14,14 +14,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    // Insert the message into the database
     $stmt = $conn->prepare("INSERT INTO contact_messages (user_id, name, email, message) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("isss", $user_id, $name, $email, $message);
 
     if ($stmt->execute()) {
-        $_SESSION['success_message'] = 'Your message has been sent successfully!';
+        $_SESSION['success_message'] = 'Ziņa veiksmīgi nosūtīta!';
     } else {
-        $_SESSION['error_message'] = 'Failed to send your message. Please try again.';
+        $_SESSION['error_message'] = 'Neizdevās nosūtīt ziņojumu. Mēģiniet vēlreiz vēlāk.';
     }
 
     header('Location: /BalticLogi/public/contacts.php');
