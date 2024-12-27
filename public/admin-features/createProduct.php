@@ -17,11 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($stmt->execute()) {
         session_start();
-        $_SESSION['success_message'] = 'Product created successfully!';
+        $_SESSION['success_message'] = 'Produkts veiksmīgi izveidots!';
         header("Location: manageProducts.php");
         exit;
     } else {
-        die("Failed to create product.");
+        die("Neizdevās izveidot produktu.");
     }
 }
 ?>

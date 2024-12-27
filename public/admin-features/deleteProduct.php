@@ -10,11 +10,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['product_id'])) {
 
     if ($stmt->execute()) {
         session_start();
-        $_SESSION['success_message'] = 'Product deleted successfully!';
+        $_SESSION['success_message'] = 'Produkts veiksmīgi dzēsts!!';
         header("Location: manageProducts.php");
         exit;
     } else {
-        die("Failed to delete product.");
+        die("Neizdevās dzēst pasūtījumu.");
     }
 }
 ?>
