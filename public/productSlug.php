@@ -31,7 +31,7 @@ $product = $result->fetch_assoc();
 <body>
     <?php include '../public/components/navbar.php'; ?>
 
-    <div class="max-w-screen-xl mx-auto my-4">
+    <div class="max-w-screen-xl mx-auto mt-4 mb-40">
         <div class="flex flex-wrap lg:flex-nowrap lg:flex-row gap-4">
             <div class="w-full lg:max-w-2xl">
                 <?php if (!empty($product['image_path'])): ?>

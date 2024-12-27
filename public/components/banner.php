@@ -10,11 +10,12 @@
         <h2 class="text-4xl sm:text-6xl font-bold text-white">
             Atrodi piemērotākos risinājumus <span class="text-danger">tieši TEV.</span>
         </h2>
-        <button class="py-4 px-6 mt-8 bg-danger text-white font-semibold rounded-sm drop-shadow-sm 
-                       hover:drop-shadow-md hover:bg-opacity-90 active:scale-[1.01]"
-                href="#"
-        > 
-            Uzzināt vairāk 
-        </button>
+        <a href="/BalticLogi/public/products.php">
+            <button class="py-4 px-6 mt-8 bg-danger text-white font-semibold rounded-sm drop-shadow-sm 
+                        hover:drop-shadow-md hover:bg-opacity-90 active:scale-[1.01]"
+            > 
+                Uzzināt vairāk 
+            </button>
+        </a>
     </div>
 </div>
