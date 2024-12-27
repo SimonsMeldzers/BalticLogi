@@ -5,6 +5,7 @@ include '../src/isAdmin.php';
 $user_count = $conn->query("SELECT COUNT(*) AS count FROM users")->fetch_assoc()['count'];
 $product_count = $conn->query("SELECT COUNT(*) AS count FROM products")->fetch_assoc()['count'];
 $order_count = $conn->query("SELECT COUNT(*) AS count FROM orders")->fetch_assoc()['count']; 
+$contactMessagesCount = $conn->query("SELECT COUNT(*) AS total FROM contact_messages")->fetch_assoc()['total'];
 ?>
 
 <!DOCTYPE html>
@@ -37,6 +38,14 @@ $order_count = $conn->query("SELECT COUNT(*) AS count FROM orders")->fetch_assoc
                 <h2 class="text-xl font-bold">Pasūtījumi</h2>
                 <p>Kopā: <?php echo $order_count; ?></p>
                 <a href="admin-features/manageOrders.php" class="text-primary hover:underline">Rediģēt Pasūtījumus</a>
+            </div>
+            <!-- Ziņas -->
+            <div class="bg-white p-6 shadow-md rounded-lg">
+                <h2 class="text-xl font-bold">Lietotāju ziņojumi</h2>
+                <p>Kopā: <?php echo $contactMessagesCount; ?></p>
+                <a href="admin-features/manageMessages.php" class="text-primary hover:underline">
+                    Lasīt Visas Ziņas
+                </a>
             </div>
         </div>
     </div>
