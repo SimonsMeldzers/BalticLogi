@@ -20,6 +20,7 @@ $products = $result->fetch_array();
     <?php include '../public/components/navbar.php'; ?>
     <?php include '../public/components/banner.php'; ?>
     <?php include '../public/components/featuredProducts.php'; ?>
+    <?php include '../public/components/footer.php'; ?>
 
     <?php
         $conn->close();

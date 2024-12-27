@@ -50,5 +50,6 @@ $products = $conn->query($query);
             <?php endwhile; ?>
         </div>
     </div>
+    <?php include '../public/components/footer.php'; ?>
 </body>
 </html>
